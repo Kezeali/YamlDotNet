@@ -26,7 +26,6 @@ using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization.Converters;
 using YamlDotNet.Serialization.EventEmitters;
-using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization.ObjectGraphTraversalStrategies;
 using YamlDotNet.Serialization.ObjectGraphVisitors;
 using YamlDotNet.Serialization.TypeInspectors;

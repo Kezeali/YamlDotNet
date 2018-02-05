@@ -22,7 +22,6 @@
 using FluentAssertions;
 using Xunit;
 using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 
 namespace YamlDotNet.Test.Serialization
 {

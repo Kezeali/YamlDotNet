@@ -21,7 +21,7 @@
 
 using YamlDotNet.Serialization.Utilities;
 
-namespace YamlDotNet.Serialization.NamingConventions
+namespace YamlDotNet.Serialization
 {
     /// <summary>
     /// Convert the string with underscores (this_is_a_test) or hyphens (this-is-a-test) to 

@@ -11,7 +11,6 @@ using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.Converters;
-using YamlDotNet.Serialization.NamingConventions;
 
 namespace YamlDotNet.Test.Serialization
 {

@@ -21,7 +21,7 @@
 
 using YamlDotNet.Serialization.Utilities;
 
-namespace YamlDotNet.Serialization.NamingConventions
+namespace YamlDotNet.Serialization
 {
     /// <summary>
     /// Convert the string from camelcase (thisIsATest) to a hyphenated (this-is-a-test) string

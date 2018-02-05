@@ -20,7 +20,7 @@
 //  SOFTWARE.
 
 
-namespace YamlDotNet.Serialization.NamingConventions
+namespace YamlDotNet.Serialization
 {
     /// <summary>
     /// Performs no naming conversion.

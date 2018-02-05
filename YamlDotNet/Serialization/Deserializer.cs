@@ -25,7 +25,6 @@ using System.IO;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization.Converters;
-using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization.NodeDeserializers;
 using YamlDotNet.Serialization.NodeTypeResolvers;
 using YamlDotNet.Serialization.ObjectFactories;
