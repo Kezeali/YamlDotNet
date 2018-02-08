@@ -55,7 +55,7 @@ namespace YamlDotNet.Serialization
         internal ITypeInspector BuildTypeInspector()
         {
             return typeInspectorFactories.BuildComponentChain(
-                new ReadablePropertiesTypeInspector(typeResolver)
+                new ReadableFieldsTypeInspector(typeResolver)
             );
         }
 
@@ -257,7 +257,7 @@ namespace YamlDotNet.Serialization
         public TBuilder WithoutTypeInspector<TTypeInspector>()
             where TTypeInspector : ITypeInspector
         {
-            return WithoutTypeInspector(typeof(ITypeInspector));
+            return WithoutTypeInspector(typeof(TTypeInspector));
         }
 
         /// <summary>

@@ -207,14 +207,20 @@ namespace YamlDotNet.Serialization
         /// </summary>
         public SerializerBuilder EnsureRoundtrip()
         {
+            EnableRoundtripGraphTraversalStrategy();
+            WithEventEmitter(inner => new TypeAssigningEventEmitter(inner, true), loc => loc.InsteadOf<TypeAssigningEventEmitter>());
+            return WithTypeInspector(inner => new ReadableAndWritablePropertiesTypeInspector(inner), loc => loc.OnBottom());
+        }
+
+        public SerializerBuilder EnableRoundtripGraphTraversalStrategy()
+        {
             objectGraphTraversalStrategyFactory = (typeInspector, typeResolver, typeConverters) => new RoundtripObjectGraphTraversalStrategy(
                 typeConverters,
                 typeInspector,
                 typeResolver,
                 50
             );
-            WithEventEmitter(inner => new TypeAssigningEventEmitter(inner, true), loc => loc.InsteadOf<TypeAssigningEventEmitter>());
-            return WithTypeInspector(inner => new ReadableAndWritablePropertiesTypeInspector(inner), loc => loc.OnBottom());
+            return this;
         }
 
         /// <summary>

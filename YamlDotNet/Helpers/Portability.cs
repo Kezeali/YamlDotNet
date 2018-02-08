@@ -281,6 +281,16 @@ namespace YamlDotNet
         {
             return o.GetType() == type || o.GetType().GetTypeInfo().IsSubclassOf(type);
         }
+
+        public static bool PortableIsNotSerialized(this FieldInfo fieldInfo)
+        {
+            return false;
+        }
+
+        public static IEnumerable<FieldInfo> PortableGetFields(this Type type)
+        {
+            return type.GetTypeInfo().DeclaredFields;
+        }
     }
 
     internal enum TypeCode
@@ -417,6 +427,16 @@ namespace YamlDotNet
         public static bool IsInstanceOf(this Type type, object o)
         {
             return type.IsInstanceOfType(o);
+        }
+
+        public static FieldInfo[] PortableGetFields(this Type type)
+        {
+            return type.GetFields();
+        }
+
+        public static bool PortableIsNotSerialized(this FieldInfo fieldInfo)
+        {
+            return fieldInfo.IsNotSerialized;
         }
     }
 
