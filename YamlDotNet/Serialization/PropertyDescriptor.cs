@@ -57,6 +57,8 @@ namespace YamlDotNet.Serialization
             get { return baseDescriptor.CanWrite; }
         }
 
+        public bool Public { get { return baseDescriptor.Public; } }
+
         public void Write(object target, object value)
         {
             baseDescriptor.Write(target, value);

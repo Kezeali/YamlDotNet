@@ -75,6 +75,7 @@ namespace YamlDotNet.Serialization.TypeInspectors
             public Type TypeOverride { get; set; }
             public int Order { get; set; }
             public bool CanWrite { get { return true; } }
+            public bool Public { get { return _fieldInfo.IsPublic; } }
             public ScalarStyle ScalarStyle { get; set; }
 
             public void Write(object target, object value)

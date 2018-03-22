@@ -28,6 +28,7 @@ namespace YamlDotNet.Serialization
     {
         string Name { get; }
         bool CanWrite { get; }
+        bool Public { get; }
         Type Type { get; }
         Type TypeOverride { get; set; }
         int Order { get; set; }
