@@ -39,6 +39,16 @@ If you do not want to use NuGet, you can [download binaries here](https://ci.app
 
 YamlDotNet is also available on the [Unity Asset Store](https://www.assetstore.unity3d.com/en/#!/content/36292).
 
+## Building
+
+Building requires a bunch of frameworks to be installed. You can figure out the required frameworks by looking in the project files, or referencing the probably-accurate list in the changelog below.
+
+Importantly, building requires .NET Standard 1.3 to be installed in your dev environment (can be downloaded using the VS installer.) If this is not installed, you'll get weird errors when trying to build.
+
+Once the required frameworks are installed, simply build the solution in the Release-Unsigned configuration.
+
+The version of the DLL built against the Unity-Subset framework will be placed in the (misleadingly named) net40 output folder.
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
