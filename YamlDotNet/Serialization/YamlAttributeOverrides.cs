@@ -90,24 +90,23 @@ namespace YamlDotNet.Serialization
             {
                 var currentPriority = 0;
                 var currentType = matchType;
-                while (currentType != null)
-                {
+                while (currentType != null) {
                     ++currentPriority;
-                    if (currentType == RegisteredType)
-                    {
+                    if (currentType == RegisteredType) {
                         return currentPriority;
                     }
                     currentType = currentType.BaseType();
                 }
 
-                if (matchType.GetInterfaces().Contains(RegisteredType))
-                {
+                if (matchType.GetInterfaces().Contains(RegisteredType)) {
                     return currentPriority;
                 }
 
                 return 0;
             }
         }
+
+        public int Count { get { return overrides.Count; } }
 
         private readonly Dictionary<AttributeKey, List<AttributeMapping>> overrides = new Dictionary<AttributeKey, List<AttributeMapping>>();
 

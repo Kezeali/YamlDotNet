@@ -431,7 +431,8 @@ namespace YamlDotNet
 
         public static FieldInfo[] PortableGetFields(this Type type)
         {
-            return type.GetFields(BindingFlags.Default | BindingFlags.NonPublic);
+            FieldInfo[] result = type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+            return result;
         }
 
         public static bool PortableIsNotSerialized(this FieldInfo fieldInfo)
