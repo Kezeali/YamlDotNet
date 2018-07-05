@@ -133,18 +133,18 @@ namespace YamlDotNet.Serialization.ObjectGraphTraversalStrategies
 
         protected virtual void TraverseObject<TContext>(IObjectDescriptor value, IObjectGraphVisitor<TContext> visitor, int currentDepth, TContext context)
         {
-            if (typeof(IDictionary).IsAssignableFrom(value.Type))
-            {
-                TraverseDictionary(value, visitor, currentDepth, typeof(object), typeof(object), context);
-                return;
-            }
-
             var genericDictionaryType = ReflectionUtility.GetImplementedGenericInterface(value.Type, typeof(IDictionary<,>));
             if (genericDictionaryType != null)
             {
                 var adaptedDictionary = new GenericDictionaryToNonGenericAdapter(value.Value, genericDictionaryType);
                 var genericArguments = genericDictionaryType.GetGenericArguments();
                 TraverseDictionary(new ObjectDescriptor(adaptedDictionary, value.Type, value.StaticType, value.ScalarStyle), visitor, currentDepth, genericArguments[0], genericArguments[1], context);
+                return;
+            }
+
+            if (typeof(IDictionary).IsAssignableFrom(value.Type))
+            {
+                TraverseDictionary(value, visitor, currentDepth, typeof(object), typeof(object), context);
                 return;
             }
 
